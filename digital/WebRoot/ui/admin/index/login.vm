@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="x-ua-compatible" content="ie=7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>數碼網網站後台管理</title>
+    <link rel="stylesheet" href="/ui/admin/index/css/login.css" type="text/css" />
+    <style>
+	body {
+		background: #EBF2F6;
+	}
+	.main-bg {
+		width: 1280px;
+	}
+	.login-bg {
+		background: url(/ui/admin/images/login_bg.jpg) no-repeat;
+		width: 616px;
+		height: 324px;
+		margin: -230px 0 0 -308px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+	}
+	.login-body {
+		margin: 100px 0 0 330px;
+	}
+	.login-text {
+		font-size: 12px;
+		color: #003F6C;
+		margin-bottom: 12px;
+	}
+	.login-text input{
+		background: url(/ui/admin/images/text_bg.jpg) no-repeat;
+		border: #A7C5DA solid 1px;
+		width: 160px;
+		height: 18px;
+		margin-left: 6px;
+		_vertical-align: middle;
+		#vertical-align: middle;
+	}
+	.two-buttons {
+		margin-top: 30px;
+		margin-left: -6px;
+	}
+	.button-sbumit {
+		background: url(/ui/admin/images/button_1.gif) no-repeat;
+		border: none;
+		width: 134px;
+		height: 30px;
+		display: block;
+		font-size: 14px;
+		color: #003F6C;
+		padding: 0 0 6px 12px;
+		_padding: 0 0 1px 12px;
+		#padding: 0 0 1px 12px;
+		float: left;
+	}
+	.button-reset {
+		background: url(/ui/admin/images/button_2.gif) no-repeat;
+		border: none;
+		width: 81px;
+		height: 30px;
+		display: block;
+		font-size: 12px;
+		color: #006699;
+		padding: 0 0 5px 14px;
+		_padding: 0 0 2px 14px;
+		#padding: 0 0 2px 14px;
+		margin-left: 18px;
+		float: left;
+	}
+	.warning-box {
+		background: #FFF;
+		border: #900 solid 1px;
+		font-size: 12px;
+		height: 20px;
+		line-height: 20px;
+		color: #900;
+		padding-left: 6px;
+		width: 220px; 
+		margin: 20px 0 0 -6px;
+	}
+</style>
+ 
+</head>
+<body>
+   <form action="/nimda/nimdaLogin" method="post">
+    <div class="main-bg">
+        <div class="login-bg">
+            <div class="login-body">
+                <div class="login-text">
+                    登錄帳號：<input id="account" name="adminName" type="text" value=""  />
+                </div>
+                <div class="login-text">
+                    登錄密碼：<input id="password" name="adminPassword" type="password" />
+                </div>
+                <div class="two-buttons">
+                    <input name="" type="submit" class="button-sbumit" value="登&nbsp;錄" />
+                    <input name="" type="reset" class="button-reset" value="重&nbsp;置" />
+                    <div class="clear">
+                        &nbsp;</div>
+                </div>
+                <div class="warning-box">
+                    警告：若非本網管理員，請勿隨意登陸！                   
+                </div>
+            </div>
+        </div>
+    </div>
+   </form>
+</body>
+</html>
+ 

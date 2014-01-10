@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<!-- =====================下面是IBATIS的DAO的配置============================= -->	
+    <!-- 後臺管理員 -->
+    <bean id="dadminMessageDao" class="com.digital.ibatis.dao.DAdminMessageDAOImpl">
+         <property name="sqlMapClient" ref="sqlMapClient"></property>
+    </bean>    
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- 後臺登陸 -->
+	 <bean id="adminLoginAction" scope="prototype" class="com.digital.struts.action.admin.LoginAction">
+		 <property name="adminService" ref="adminService" />
+     </bean>
+     <!-- 管理員管理 -->
+     <bean id="adminAction" scope="prototype" class="com.digital.struts.action.admin.AdminAction">
+		  <property name="fcAdminMessageService" ref="adminService" />
+		 <!--<property name="fcPermissionService" ref="fcPermissionService" />-->
+    </bean>   
+</beans>

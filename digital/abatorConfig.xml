@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abatorConfiguration PUBLIC "-//Apache Software Foundation//DTD Abator for iBATIS Configuration 1.0//EN"
+   "http://ibatis.apache.org/dtd/abator-config_1_0.dtd">
+
+<abatorConfiguration>
+   <abatorContext>     <!-- TODO: Add Database Connection Information -->
+        <!-- driverClass和connectionURL通过myEclipse DataBase Explore 查找 -->
+     <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+         connectionURL="jdbc:mysql://192.168.1.215:3306/digitaldb?characterEncoding=UTF-8"
+         userId="root"
+         password="root">
+         <!--  classPathEntry有多个jar包时写入多个，只有一个的仅写入一个 -->
+       <classPathEntry location="D:\tools\mysql.jar" />
+     </jdbcConnection>
+       <!-- targetPackage指定项目包名，targetProject 指定项目名 -->
+     <javaModelGenerator targetPackage="com.digital.ibatis.dto" targetProject="digital" />
+     <sqlMapGenerator targetPackage="com.digital.ibatis.sqlmap" targetProject="digital" />
+     <daoGenerator type="spring" targetPackage="com.digital.ibatis.dao" targetProject="digital" />
+	 <!--schema指定数据库名 tableName 指定数据库表明 -->
+	 <table  schema="digitaldb" tableName="d_admin_message" domainObjectName="DAdminMessage" />
+   </abatorContext>
+</abatorConfiguration>

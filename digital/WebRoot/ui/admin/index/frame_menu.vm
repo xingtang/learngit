@@ -1,0 +1,190 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1">
+    <title></title>
+	<meta http-equiv="x-ua-compatible" content="ie=7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="/ui/admin/index/css/Menu.css"/>
+    <script type="text/javascript" src="/ui/admin/index/js/Frame_Menu.js"></script>
+</head>
+<body>
+		<table cellpadding="0" cellspacing="0" class="menu" style="margin-bottom:0;">
+			<tr>
+				<td height="42" valign="bottom">
+					<img src="/ui/admin/images/title.gif" alt=""/>
+				</td>
+			</tr>
+		</table>
+		<table cellpadding="0" cellspacing="0" class="menu">
+			<tr>
+				<td class="menu_title" background="/ui/admin/images/Admin_title_bg_quit.gif" id="menuTitle0">
+					<span>
+					    <a href="/nimdaAbout" target="main"><b>管理首頁</b></a> |
+					   <a href="/nimdaExit" target="_parent">退 出</a>
+					</span>
+				</td>
+			</tr>
+			<tr id="submenu0">
+				<td>
+					<div class="sec_menu">
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td>管理員:$!{fmacAdminiStrator.fcAdminUser}&nbsp;&nbsp;&nbsp;
+									<a href='/admin/editAdminInfo?admins.fcAdminUser=$!{fmacAdminiStrator.fcAdminUser}' style="color:#0099cc" target="main">修改密碼</a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table cellpadding="0" cellspacing="0" class="menu">
+			<tr>
+				<td class="menu_title" id="menuTitle1" onclick="showsubmenu(1)" style="cursor:pointer">
+					<span>基本設置</span>
+				</td>
+			</tr>
+			<tr style="display:block" id="submenu1">
+				<td>
+					<div class="sec_menu">
+						#if(!${fmacAdminiStrator.fcAdminPermission}||${fmacAdminiStrator.fcAdminPermission.trim().length()}==0)
+            				#set($p = "null")
+            			#else
+            				#set($p = $!{fmacAdminiStrator.fcAdminPermission})
+            			#end	
+						<table cellpadding="0" cellspacing="0" width="100%">
+							 #if($show.containInText($p,"17")==1||$!{fmacAdminiStrator.fcAdminRole}==1)
+							<tr>
+								<td  width="150px;">■  <a href="/admin/administrator" target="main">管理员</a></td>
+							</tr>
+							 #end
+							<!-- <tr>
+							   <td width="150px;">■  <a href="/admin/base/areaTop" target="main">一級區域</a></td>
+							 </tr>
+							 <tr>
+							   <td width="150px;">■  <a href="/admin/base/areaSecond" target="main">二級區域</a></td>
+							 </tr>
+							 <tr>
+							   <td width="150px;">■  <a href="/admin/base/areaThird" target="main">三級區域</a></td>
+							 </tr>	-->						 
+							 <tr style="display:none;">
+								<td width="150px;">■  <a  target="main">網站皮膚設置</a></td>
+							 </tr>
+						 <!--<tr>
+								<td width="150px;">■  <a  target="main">友情鏈接設置</a></td>
+							 </tr>				-->			
+							 <tr>
+								<td width="150px;">■  <a href="/admin/announce/fcAnnounce" target="main">網站首頁公告</a></td>
+							</tr>
+							 <tr>
+								<td width="150px;">■  <a href="/admin/importantnotes/fcImportantNotes" target="main">活動/重要通知</a></td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		<table cellpadding="0" cellspacing="0" class="menu">
+			<tr>
+				<td class="menu_title" id="menuTitle2" onclick="showsubmenu(2)" style="cursor:pointer">
+					<span>模塊管理</span>
+				</td>
+			</tr>
+			<tr style="display:block" id="submenu2">
+				<td>
+					<div class="sec_menu">
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td width="150px;">■  <a href="/admin/members/fcMembers" target="main">會員管理</a></td>
+                            </tr>
+						<!--<tr>
+								<td width="150px;">■  <a href="/admin/fcIntroductions" target="main">簡介管理</a></td>
+							</tr>					-->	
+							<tr>
+								<td width="150px;">■  <a href="/admin/information/fcInformationNotice" target="main">活動預告</a></td>
+                            </tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/information/fcInformation" target="main">活動消息</a></td>
+                            </tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/information/fcInfornews" target="main">一般消息</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/information/fcMajorEvents" target="main">重大事件</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/sponsorships/fcSponsorships" target="main">資助簡訊</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/album/fcAlbum" target="main">相冊管理</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/vedio/fcVedio" target="main">視頻管理</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/updatafile/fcUpdataFile" target="main">下載區管理</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/information/fcPublishnews" target="main">出版/研究項目</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/demand/fcDemand" target="main">門票/贈品索取</a></td>
+							</tr>	
+							<tr>
+								<td width="150px;">■  <a href="/admin/information/fcAcademic" target="main">有關本會的報導</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/information/fcOtherInformation" target="main">其他消息管理</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/interview/fcInterview" target="main">網站訪問統計</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/magazine/fcMagazine" target="main">雜誌信息管理</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a href="/admin/subscription/fcSubscription" target="main">用戶訂閱信息</a></td>
+							</tr>
+							<!--
+							<tr>
+								<td width="150px;">■  <a href="/admin/information/fcResearchResult" target="main">研究成果</a></td>
+							</tr>
+							-->
+						<!--<tr>
+								<td width="150px;">■  <a  target="main">獎學金</a></td>
+							</tr>
+							<tr>
+								<td width="150px;">■  <a  target="main">其他</a></td>
+							</tr>-->
+						</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+	<!--<table cellpadding="0" cellspacing="0" class="menu">
+			<tr>
+				<td class="menu_title" id="menuTitle3" onclick="showsubmenu(3)" style="cursor:pointer">
+					<span>其它</span>
+				</td>
+			</tr>
+		<tr style="display:block" id="submenu3">
+				<td>
+					<div class="sec_menu">
+						<table cellpadding="0" cellspacing="0" width="100%">
+						  <tr>	
+							<td width="150px;">■  <a  target="main">基金會之友</a></td>
+						  </tr>
+						  <tr>
+							<td width="150px;">■  <a  target="main">志願者之家</a></td>
+                          </tr>
+						  <tr>
+							<td width="150px;">■  <a  target="main">品牌活動</a></td>
+						  </tr>
+						</table>
+					</div>
+				</td>
+			</tr>	
+		</table> -->
+</body>
+</html>

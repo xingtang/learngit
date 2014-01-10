@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- =========以下是spring注入========================= -->
+	<!-- 後臺 -->
+	<!-- 後臺管理員 -->
+	<bean id="adminService" class="com.digital.struts.service.admin.DAdminMessageService">
+    	<property name="dadminMessageDao" ref="dadminMessageDao"></property>
+    </bean>
+    <!-- 管理員權限 -->
+    <!-- 
+    <bean id="fcPermissionService" class="com.fmac.struts.service.admin.FcPermissionService">
+		<property name="fcPermissionDao" ref="fcPermissionDao"></property>
+	</bean>	-->
+</beans>

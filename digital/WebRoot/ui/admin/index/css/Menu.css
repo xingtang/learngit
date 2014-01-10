@@ -1,0 +1,12 @@
+body{ background:#9EC5E0; margin:0px; }
+table{ border:0;	margin:0 5px; }
+td{	font-size:12px; }
+img{ border:0; vertical-align:bottom; }
+a{ color: #000000; text-decoration: none }
+a:hover{COLOR: #428eff; text-decoration: underline }
+
+.menu{ width:158px; margin:auto; margin-bottom:10px; }
+.sec_menu { padding:2px 0; width:100%; border-right:white 1px solid; background:#d6dff7; overflow:hidden; border-left:white 1px solid; border-bottom:white 1px solid; }
+.sec_menu td{ height:20px; }
+.menu_title { width:100%; height:25px; background:url(/ui/admin/images/admin_title_bg_show.gif); }
+.menu_title span { FONT-WEIGHT:bold; LEFT:8px; COLOR:#215dc6; POSITION:relative; TOP:2px }

@@ -1,0 +1,11 @@
+#Fri Dec 27 10:12:42 CST 2013
+eclipse.preferences.version=1
+encoding//WebRoot/ui/admin=UTF-8
+encoding//WebRoot/ui/admin/index/edit_password.vm=UTF-8
+encoding//WebRoot/ui/admin/index/frame_about.jsp=UTF-8
+encoding//WebRoot/ui/admin/index/frame_menu.vm=UTF-8
+encoding//WebRoot/ui/admin/index/login.vm=UTF-8
+encoding//src/com/digital/util=UTF-8
+encoding//src/com/digital/util/CKEditorUploadServlet.java=UTF-8
+encoding//src/com/digital/util/CheckAdminLoginInterceptor.java=UTF-8
+encoding//src/com/digital/util/CipherUtil.java=UTF-8

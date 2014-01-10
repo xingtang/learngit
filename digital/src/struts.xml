@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+     <constant name="struts.objectTypeDeterminer" value="notiger" />      
+     <constant name="struts.objectFactory" value="spring" />   
+     <constant name="struts.objectFactory.spring.autoWire" value="name" />   
+     <constant name="struts.multipart.maxSize" value="200000000" />
+    <include file="struts-default.xml"/>
+    
+	<!-- 後臺 -->
+     <package name="nimda"  extends="struts-default">
+        <interceptors>
+      	    <interceptor name="login" class="com.digital.util.CheckAdminLoginInterceptor"></interceptor>
+        	<interceptor-stack name="adminStack">
+        		<interceptor-ref name="login"></interceptor-ref>
+        		<interceptor-ref name="defaultStack"></interceptor-ref>
+        	</interceptor-stack>        	
+        </interceptors>
+        <global-results>
+			 <result name="admin.login" type="redirect">/nimda/execute-login</result>
+		</global-results>		                
+        <!-- 入后臺主界面 -->
+     	<action name="nimda" class="adminAction">
+     	    <interceptor-ref name="adminStack"/>  
+     		<result name="success" >/ui/admin/index/frm_all.jsp</result>
+        </action>        
+        <!-- 后臺菜欄 -->
+        <action name="nimdaMenu" class="adminAction" method="adminMenu">
+     		<result name="success" >/ui/admin/index/frame_menu.vm</result>
+        </action>
+        <!-- 關于 -->
+         <action name="nimdaAbout" class="adminAction" method="adminAbout">
+     		<result name="success" >/ui/admin/index/frame_about.jsp</result>
+        </action>
+        <action name="execute-login" class="adminLoginAction">
+            <result name="error">/ui/admin/index/login.vm</result>
+            <result name="success" type="redirect">/nimda</result>
+        </action>
+        <!-- 登入 -->
+        <action name="nimdaLogin" class="adminLoginAction" method="adminLogin">
+            <result name="error">/ui/admin/index/login.vm</result>
+            <result name="success" type="redirect">/nimda</result>
+        </action>
+        <!-- 退出 -->
+        <action name="nimdaExit" class="com.digital.struts.action.admin.ExitAction">
+            <result name="success" type="redirect">execute-login</result>
+        </action>  
+     </package>
+    
+    
+</struts>

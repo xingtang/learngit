@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toolbox>
+	<xhtml>true</xhtml>
+<tool>
+    <key>map</key>
+    <class>java.util.HashMap</class>
+</tool>
+<tool>
+    <key>date</key>
+    <scope>application</scope>
+    <class>org.apache.velocity.tools.generic.DateTool</class>
+</tool>
+<tool> 
+  <key>TokenHelper</key> 
+  <scope>request</scope> 
+  <class>org.apache.struts2.util.TokenHelper</class> 
+</tool> 
+<tool>
+    <key>show</key>
+    <scope>application</scope>
+    <class>com.digital.util.TextUtil</class>
+</tool>
+</toolbox>
